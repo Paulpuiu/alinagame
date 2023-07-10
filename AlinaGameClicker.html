@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alina's Builder Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 2em;
+        }
+        #building {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            background-image: url('https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/house-icon.png');
+            background-size: cover;
+        }
+        #score {
+            font-size: 2em;
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, Alina!</h1>
+    <p>Click on the building to construct. Let's see how fast you can build!</p>
+    <div id="building"></div>
+    <div id="score">Score: 0</div>
+    <script>
+        var score = 0;
+        document.getElementById('building').addEventListener('click', function() {
+            score++;
+            document.getElementById('score').textContent = 'Score: ' + score;
+            if (score === 10) {
+                alert('Alina, you work so hard! Proud of you.');
+            }
+        });
+    </script>
+</body>
+</html>
