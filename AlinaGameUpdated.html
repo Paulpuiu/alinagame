@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alina's Builder Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 2em;
+        }
+        #building-area {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #000;
+            position: relative;
+            margin: auto;
+        }
+        .brick {
+            width: 30px;
+            height: 20px;
+            position: absolute;
+            bottom: 0;
+            background-color: #FF6347;
+        }
+        #finish-button {
+            margin-top: 1em;
+            padding: 0.5em 1em;
+            font-size: 1.2em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, Alina!</h1>
+    <p>Click inside the box to build your structure. When you're done, hit 'Finish'.</p>
+    <div id="building-area"></div>
+    <button id="finish-button">Finish</button>
+    <script>
+        document.getElementById('building-area').addEventListener('click', function(event) {
+            var brick = document.createElement('div');
+            brick.className = 'brick';
+            brick.style.left = event.clientX + 'px';
+            this.appendChild(brick);
+        });
+
+        document.getElementById('finish-button').addEventListener('click', function() {
+            alert('Alina, you work so hard! Proud of you.');
+        });
+    </script>
+</body>
+</html>
